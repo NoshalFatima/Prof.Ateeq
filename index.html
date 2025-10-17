@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Teacher's Day</title>
+    <title>Respected Prof.Ateeq</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* New Color Palette: Gold, Maroon, and Cream */
+        :root {
+            --maroon: #800000;
+            --deep-red: #6A0505;
+            --gold: #FFC300;
+            --light-gold: #FFEB99;
+            --cream: #FFF8E1;
+            --off-white: #F9F4E1;
+            --dark-text: #4A1D1D;
+        }
+
         /* Base Styles */
         * {
             margin: 0;
@@ -15,13 +26,14 @@
         }
 
         body {
-            background: linear-gradient(135deg, #e7f9ff 0%, #d8ecf9 100%);
+            /* Creamy/Off-White Background Gradient */
+            background: linear-gradient(135deg, var(--cream) 0%, var(--off-white) 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            overflow-x: hidden; /* Prevent horizontal scroll from confetti */
+            overflow-x: hidden;
         }
 
         .container {
@@ -32,7 +44,7 @@
         }
 
         h2 {
-            color: #2c3e50;
+            color: var(--dark-text);
             margin-bottom: 30px;
             font-size: 2.8rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
@@ -42,8 +54,8 @@
         .card-container {
             perspective: 1000px;
             margin: 0 auto 30px;
-            width: 320px; /* Base width */
-            height: 450px; /* Base height */
+            width: 320px;
+            height: 450px;
             position: relative;
         }
 
@@ -66,31 +78,34 @@
             height: 100%;
             backface-visibility: hidden;
             border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            /* Stronger shadow for richness */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
             padding: 30px;
             overflow: hidden;
-            border: 2px solid #87CEEB;
+            /* Gold border */
+            border: 2px solid var(--gold);
         }
 
         /* Card Front styles (centered content) */
         .card-front {
-            background: linear-gradient(135deg, #87CEEB 0%, #B0E2FF 100%);
-            color: #2c3e50;
+            /* Gold/Light Gold Gradient */
+            background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
+            color: var(--dark-text);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
 
-        /* Card Back styles (Flow from top - FIX APPLIED HERE) */
+        /* Card Back styles (Flow from top) */
         .card-back {
-            background: linear-gradient(135deg, #B0E2FF 0%, #E0F7FF 100%);
-            color: #2c3e50;
+            /* Cream/Off-White Gradient for the message interior */
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--cream) 100%);
+            color: var(--dark-text);
             transform: rotateY(180deg);
             overflow-y: auto;
             text-align: left;
             padding: 30px;
-            /* Key Fix: Overrides flex centering, allowing content to start at the top */
             display: block;
         }
 
@@ -109,7 +124,8 @@
             height: 0;
             border-left: 100px solid transparent;
             border-right: 100px solid transparent;
-            border-top: 75px solid #5DADE2;
+            /* Deep Red Flap */
+            border-top: 75px solid var(--deep-red);
             z-index: 2;
         }
 
@@ -118,7 +134,8 @@
             bottom: 0;
             width: 200px;
             height: 120px;
-            background: #87CEEB;
+            /* Maroon Body */
+            background: var(--maroon);
             border-radius: 0 0 10px 10px;
             z-index: 1;
         }
@@ -145,7 +162,7 @@
 
         .letter i {
             font-size: 2rem;
-            color: #5DADE2;
+            color: var(--maroon); /* Heart Icon Color */
             animation: bounce 2s infinite;
         }
 
@@ -162,7 +179,7 @@
         }
 
         .open-btn {
-            background: #5DADE2;
+            background: var(--maroon);
             color: white;
             border: none;
             padding: 12px 30px;
@@ -171,36 +188,47 @@
             cursor: pointer;
             margin-top: 20px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(93, 173, 226, 0.3);
+            box-shadow: 0 4px 10px rgba(128, 0, 0, 0.3); /* Maroon shadow */
             z-index: 10;
             position: relative;
         }
 
         .open-btn:hover {
-            background: #3498DB;
+            background: var(--deep-red);
             transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(93, 173, 226, 0.4);
+            box-shadow: 0 6px 15px rgba(128, 0, 0, 0.4);
         }
 
         .message h3 {
             font-size: 1.8rem;
             margin-bottom: 15px;
             text-align: center;
-            color: #2c3e50;
-            margin-top: 0; /* Ensures the H3 starts right at the top of the padding */
+            color: var(--maroon);
+            margin-top: 0;
         }
 
         .message h4 {
             font-size: 1.2rem;
             text-align: center;
             margin-bottom: 15px;
-            color: #3498DB;
+            color: var(--deep-red);
         }
 
         .message p {
             font-size: 1.0rem;
             line-height: 1.6;
             margin-bottom: 10px;
+            color: var(--dark-text); /* Ensure text is readable */
+        }
+        
+        /* Specific styling for the Punjabi message to make it stand out slightly */
+        .message p:first-of-type {
+            font-weight: 500;
+            line-height: 1.8;
+            padding: 10px;
+            border-left: 3px solid var(--gold);
+            background-color: var(--off-white);
+            margin-top: 15px;
         }
 
         .signature {
@@ -211,6 +239,11 @@
             font-size: 1.1rem;
             display: block;
         }
+
+        /* Flower Emojis - Keeping the pink/purple theme but adjusting animation color */
+        .flower:nth-child(1) { animation-delay: 0s; color: #E91E63; } /* Pink */
+        .flower:nth-child(2) { animation-delay: 0.5s; color: #9C27B0; } /* Purple */
+        .flower:nth-child(3) { animation-delay: 1s; color: #E91E63; } /* Pink */
 
         .flowers {
             display: flex;
@@ -223,23 +256,20 @@
             font-size: 1.8rem;
             animation: float 3s ease-in-out infinite;
         }
-
-        .flower:nth-child(1) { animation-delay: 0s; color: #5DADE2; }
-        .flower:nth-child(2) { animation-delay: 0.5s; color: #3498DB; }
-        .flower:nth-child(3) { animation-delay: 1s; color: #5DADE2; }
-
+        
+        /* Clouds - Keep them white/light against the gold front */
         .cloud {
             position: absolute;
             background: white;
             border-radius: 50%;
-            opacity: 0.7;
+            opacity: 0.8;
         }
 
         .cloud-1 { width: 80px; height: 30px; top: 20px; left: 30px; }
         .cloud-2 { width: 60px; height: 20px; bottom: 40px; right: 40px; }
         .cloud-3 { width: 40px; height: 15px; top: 60px; right: 30px; }
 
-        /* Keyframe Animations (Confetti and other effects) */
+        /* Keyframe Animations */
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
@@ -254,7 +284,8 @@
             position: fixed;
             width: 10px;
             height: 10px;
-            background-color: #5DADE2;
+            /* Confetti colors will be dynamic in JS but default set to gold */
+            background-color: var(--gold);
             opacity: 0;
             pointer-events: none;
             z-index: 1;
@@ -289,7 +320,6 @@
                 font-size: 1.1rem;
             }
 
-            /* Reduced font size for message content on small screens */
             .message p {
                 font-size: 0.95rem;
                 margin-bottom: 8px;
@@ -334,7 +364,7 @@
             }
         }
     </style>
-   
+    
 </head>
 <body>
     <div class="container">
@@ -367,13 +397,8 @@
 سانوں numerical analysis تسی پڑھانی اے<br>
 سانوں لگدا ساڈی ترلے پاپا زندگی نبھ جانی اے</p>
 
-
-
-                        <div class="flowers">
-                            <div class="flower">🌸</div>
-                            <div class="flower">🌺</div>
-                            <div class="flower">🌷</div>
-                        </div>
+                        
+                      
                     </div>
                 </div>
             </div>
@@ -416,7 +441,8 @@
             });
 
             function createConfetti() {
-                const colors = ['#5DADE2', '#3498DB', '#85C1E9', '#AED6F1', '#D6EAF8', '#FFD700'];
+                // Updated colors for the new scheme: Gold, Maroon, Cream
+                const colors = ['#FFC300', '#800000', '#FFEB99', '#FFF8E1', '#6A0505'];
                 const container = document.body;
 
                 clearConfetti();
@@ -467,12 +493,5 @@
             }
         });
     </script>
-  
-
 </body>
 </html>
-
-
-
-
-
