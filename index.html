@@ -6,15 +6,17 @@
     <title>Respected Prof.Ateeq</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* New Color Palette: Gold, Maroon, and Cream */
+        /* New Color Palette: Mint Green, Maroon, and Cream */
         :root {
             --maroon: #800000;
             --deep-red: #6A0505;
-            --gold: #FFC300;
-            --light-gold: #FFEB99;
+            --mint-green: #A5D6A7;       /* Primary light shade */
+            --light-mint: #C8E6C9;       /* Lighter shade for gradient */
             --cream: #FFF8E1;
             --off-white: #F9F4E1;
             --dark-text: #4A1D1D;
+            --flower-pink: #E91E63;
+            --flower-purple: #9C27B0;
         }
 
         /* Base Styles */
@@ -78,18 +80,17 @@
             height: 100%;
             backface-visibility: hidden;
             border-radius: 15px;
-            /* Stronger shadow for richness */
             box-shadow: 0 15px 35px rgba(0,0,0,0.25);
             padding: 30px;
             overflow: hidden;
-            /* Gold border */
-            border: 2px solid var(--gold);
+            /* Mint Green border */
+            border: 2px solid var(--mint-green);
         }
 
         /* Card Front styles (centered content) */
         .card-front {
-            /* Gold/Light Gold Gradient */
-            background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
+            /* Mint Green Gradient */
+            background: linear-gradient(135deg, var(--mint-green) 0%, var(--light-mint) 100%);
             color: var(--dark-text);
             display: flex;
             flex-direction: column;
@@ -218,7 +219,7 @@
             font-size: 1.0rem;
             line-height: 1.6;
             margin-bottom: 10px;
-            color: var(--dark-text); /* Ensure text is readable */
+            color: var(--dark-text);
         }
         
         /* Specific styling for the Punjabi message to make it stand out slightly */
@@ -226,7 +227,7 @@
             font-weight: 500;
             line-height: 1.8;
             padding: 10px;
-            border-left: 3px solid var(--gold);
+            border-left: 3px solid var(--mint-green);
             background-color: var(--off-white);
             margin-top: 15px;
         }
@@ -241,9 +242,9 @@
         }
 
         /* Flower Emojis - Keeping the pink/purple theme but adjusting animation color */
-        .flower:nth-child(1) { animation-delay: 0s; color: #E91E63; } /* Pink */
-        .flower:nth-child(2) { animation-delay: 0.5s; color: #9C27B0; } /* Purple */
-        .flower:nth-child(3) { animation-delay: 1s; color: #E91E63; } /* Pink */
+        .flower:nth-child(1) { animation-delay: 0s; color: var(--flower-pink); }
+        .flower:nth-child(2) { animation-delay: 0.5s; color: var(--flower-purple); }
+        .flower:nth-child(3) { animation-delay: 1s; color: var(--flower-pink); }
 
         .flowers {
             display: flex;
@@ -257,7 +258,7 @@
             animation: float 3s ease-in-out infinite;
         }
         
-        /* Clouds - Keep them white/light against the gold front */
+        /* Clouds - Keep them white/light against the green front */
         .cloud {
             position: absolute;
             background: white;
@@ -284,8 +285,8 @@
             position: fixed;
             width: 10px;
             height: 10px;
-            /* Confetti colors will be dynamic in JS but default set to gold */
-            background-color: var(--gold);
+            /* Confetti colors will be dynamic in JS */
+            background-color: var(--mint-green);
             opacity: 0;
             pointer-events: none;
             z-index: 1;
@@ -398,7 +399,7 @@
 سانوں لگدا ساڈی ترلے پاپا زندگی نبھ جانی اے</p>
 
                         
-                      
+                       
                     </div>
                 </div>
             </div>
@@ -441,8 +442,8 @@
             });
 
             function createConfetti() {
-                // Updated colors for the new scheme: Gold, Maroon, Cream
-                const colors = ['#FFC300', '#800000', '#FFEB99', '#FFF8E1', '#6A0505'];
+                // Updated colors for the new scheme: Mint Green, Maroon, Cream
+                const colors = ['#A5D6A7', '#800000', '#C8E6C9', '#FFF8E1', '#6A0505'];
                 const container = document.body;
 
                 clearConfetti();
